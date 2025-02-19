@@ -23,35 +23,40 @@ This project provides a simple web-based interface to interact with an Oracle SQ
 - **Database:**
   - Oracle SQL
   
-## 🛠️ Installation
+## Installation Instructions
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/database-interface.git
-cd database-interface
-```
+### Prerequisites
+1. **Oracle SQL**: Install Oracle SQL and set up a database.
 
-2. Install dependencies
-```bash
-npm install
-```
+### Steps
 
-3. Configure your database connection in `src/config/api.config.js`
-```javascript
-const API_CONFIG = {
-    baseUrl: 'http://localhost:3000',
-    endpoints: {
-        select: '/api/select',
-        update: '/api/update'
-    }
-};
-```
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Horo27/CRUD-interface-oraclesql.git
+   ```
 
-## 📁 Project Structure
+2. **Set Up PostgreSQL Database**:
+   - Create a new Oracle SQL database.
+   - Update the `src/server.js` file with your database credentials.
 
-```plaintext
-interfata/
-├── src/
-│   ├── controllers/    # Request handlers and business logic
-│   ├── utils/          # Helper functions and utilities
-│   ├── models/         # Data models and state management
+   ```properties
+   const mypw = 'parola'  //here you replace 'parola' with your database connection password
+
+   dbconfig = {
+       user          : "utilizator", //here you replace "utilizator" with your database username
+       password      : mypw,
+       connectString : "(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))(CONNECT_DATA =(SID= XE)))"
+   };
+   ```
+
+3. **Start the server**:
+
+   ```terminal
+   node src/server.js
+   ```
+
+   
+
+4. **Open the interface**:
+   - Open `public/index.html` in a browser
+
